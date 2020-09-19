@@ -1,0 +1,36 @@
+//Company Table
+company_id  int auto increment
+company_first_name string
+company_last_name string
+company_business_name string
+company_email string unique
+company_password string
+
+//Employee Table
+employee_id int auto increment
+employee_first_name string 
+employee_last_name string
+employee_email string unique
+employee_password string 
+image_path string
+resume_path string 
+// SKilss Table
+id int 
+skill_name string 
+
+//Job register Table
+register_id int auto increment 
+job_title string
+job_description string 
+salary float
+location string
+country string
+company_id_fk foreign Key Company 
+
+// Applied Jobs Table
+
+id int auto increment 
+employe_id_fk foreign key Employe
+company_id_fk foreign Key Company 
+dates string 
+
