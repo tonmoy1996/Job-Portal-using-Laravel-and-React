@@ -45,19 +45,26 @@ class CompanyProfile extends Component {
             </Link>
           </div>
         </div>
+        <h5 className='text-primary'>Posted Jobs:</h5>
+
         {jobs.map((job) => (
           <div className='mt-4' key={job.register_id}>
             <div className='list-group'>
-              <li
-                className='list-group-item list-group-item-action active'
-                aria-disabled='true'
-              >
+              <li className='list-group-item list-group-item-action active'>
                 {job.job_title}
               </li>
               <li className='list-group-item'>{job.job_description}</li>
               <li className='list-group-item'>{job.salary}</li>
               <li className='list-group-item'>{job.location}</li>
               <li className='list-group-item'>{job.country}</li>
+              <li className='list-group-item'>
+                <Link
+                  to={`/candidate/` + job.register_id}
+                  className='btn btn-info btn-block'
+                >
+                  Show Applied Candidates
+                </Link>
+              </li>
             </div>
           </div>
         ))}

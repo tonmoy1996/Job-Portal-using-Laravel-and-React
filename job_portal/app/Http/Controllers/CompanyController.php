@@ -40,7 +40,7 @@ class CompanyController extends Controller
     }
 
     public function apply_candidate($id){
-      $names= DB::table('employees')->select('employees.employee_first_name','employees.employee_last_name','employees.employee_email')->join('applied_jobs','applied_jobs.employee_id','=','employees.employee_id')->where(['applied_jobs.register_id'=> $id])->get();
+      $names= DB::table('employees')->select('employees.employee_first_name','employees.employee_last_name','employees.employee_email','employees.resume_path')->join('applied_jobs','applied_jobs.employee_id','=','employees.employee_id')->where(['applied_jobs.register_id'=> $id])->get();
       return response()->json($names);
     }
 }

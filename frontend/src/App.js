@@ -10,6 +10,7 @@ import SeekerRegister from './components/SeekerRegister';
 import Home from './components/Home';
 import ProfileUpdate from './components/ProfileUpdate';
 import JobPost from './components/JobPost';
+import Candidate from './components/Candidate';
 function App() {
   return (
     <div className='container'>
@@ -24,6 +25,7 @@ function App() {
         <Route exact path='/company_register' component={CompanyRegister} />
         <Route exact path='/profile_update/:id' component={ProfileUpdate} />
         <Route exact path='/job_post' component={JobPost} />
+        <Route exact path='/candidate/:id' component={Candidate} />
       </Switch>
     </div>
   );

@@ -13,6 +13,13 @@ class Home extends Component {
 
   applyJobs = async (id) => {
     const emp_id = localStorage.getItem('employee_id');
+    //CHECK THE EMPLOY AS RESUME HAS OR NOT
+    const url = `get_emp/${emp_id}`;
+    const seek = await axios.get(url);
+    if (seek.data.resume_path === '') {
+      this.props.history.push(`/profile_update/` + emp_id);
+    }
+
     const data = {
       employee_id: emp_id,
       register_id: id.toString(),
@@ -20,7 +27,6 @@ class Home extends Component {
     };
     console.log(data);
     const result = await axios.post('/apply_job', data);
-    console.log(result.data);
   };
   render() {
     const { jobs } = this.state;
