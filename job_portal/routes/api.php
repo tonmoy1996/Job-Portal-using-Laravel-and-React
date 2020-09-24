@@ -35,6 +35,7 @@ Route::post('emp_update/{id}',[EmployeeController::class,'update']);
 Route::get('get_emp/{id}',[EmployeeController::class,'get']);
 //applied jobe
 Route::post('apply_job',[ApplyController::class,'create']);
+Route::get('getemp',[ApplyController::class,'getEmployee']);
 
 
 
